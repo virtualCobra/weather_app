@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'home.dart' as home;
 
 class CityChanger extends StatefulWidget {
   @override
@@ -34,7 +34,12 @@ class _CityChangerState extends State<CityChanger> {
               )),
               ListTile(
                 title: RaisedButton(
-                     onPressed: (){},// { Navigator.pop(context,{'enter': _searchcity.text)},
+                    
+                     onPressed: (){
+                       Navigator.pop(context,{'city':_searchCity.text});
+                       
+                     // UpdateCity();
+                     },// { Navigator.pop(context,{'enter': _searchcity.text)},
                     child: Text(
                       "Proceed",
                       style: TextStyle(color: Colors.white),

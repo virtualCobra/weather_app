@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/citychanger.dart';
 import 'JsonAPILinker.dart';
 import 'textStyles.dart';
+import 'dart:async';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +11,14 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   String city = "Karnal";
+  Future cityUpdate(BuildContext context) async{
+  Map newCity = await Navigator.of(context).push(
+    new MaterialPageRoute(builder:(BuildContext context){return new CityChanger() ;})
+ );
+ if (newCity != null && newCity.containsKey('city')){
+   print(newCity['city']);
+   city = newCity["city"].toString();
+ }}
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -51,10 +60,13 @@ class HomeState extends State<Home> {
           new Container(
               //color: Colors.black,
               padding: EdgeInsets.all(10),
-              margin: EdgeInsets.fromLTRB(30, 470, 50, 00),
+              margin: EdgeInsets.fromLTRB(10, 300, 10, 00),
               child: updateTempPanel(city))
         ],
       ),
     );
   }
 }
+
+
+  

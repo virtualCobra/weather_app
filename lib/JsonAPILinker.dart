@@ -35,7 +35,7 @@ Widget updateTempPanel(String city) {
           
           
             child: new Column(children: <Widget>[
-          new ListTile(title: Text("TEMPRATURE : " + temp, style: tempStyle())),
+          new ListTile(title: Text("TEMPRATURE : " + temp +"C", style: tempStyle())),
           new ListTile(title: Text("SKY                   : " + weather, style: tempStyle())),
           new ListTile(title: Text("HUMIDITY        : " + humid, style: tempStyle()))
           //  new ListTile(ti)
