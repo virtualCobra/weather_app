@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home.dart' as home;
 
 class CityChanger extends StatefulWidget {
   @override
@@ -17,12 +16,12 @@ class _CityChangerState extends State<CityChanger> {
       ),
       body: new Stack(
         children: <Widget>[
-          new Center(
-            child: new Image.asset(
-              "images/autumnbackgrounf.png",
-              fit: BoxFit.cover,
-              height: 1300,
-            ),
+          Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Colors.red[200], Colors.white],
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topRight)),
           ),
           new ListView(
             children: <Widget>[
@@ -34,12 +33,10 @@ class _CityChangerState extends State<CityChanger> {
               )),
               ListTile(
                 title: RaisedButton(
-                    
-                     onPressed: (){
-                       Navigator.pop(context,{'city':_searchCity.text});
-                       
-                     // UpdateCity();
-                     },// { Navigator.pop(context,{'enter': _searchcity.text)},
+                    onPressed: () {
+                      Navigator.pop(context, {'city': _searchCity.text});
+                      // UpdateCity();
+                    }, // { Navigator.pop(context,{'enter': _searchcity.text)},
                     child: Text(
                       "Proceed",
                       style: TextStyle(color: Colors.white),

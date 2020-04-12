@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 TextStyle cityStyle() {
   return new TextStyle(
-    color: Colors.red,
-    fontSize: 38,
-    fontStyle: FontStyle.italic,
-    fontWeight: FontWeight.w600
+      color: Colors.red,
+      fontSize: 38,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w600);
+}
+
+TextStyle errMessageStyle() {
+  return new TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w500,
+    fontSize: 22,
   );
 }
 
